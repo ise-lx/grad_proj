@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}跌倒检测系统,camera1{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+        <h4>你好，{{ request.session.user_name }}</h4>
+    {% else %}
+    <script type="text/javascript">
+        window.location.href='/index/'
+    </script>
+    {% endif %}
+    <a href="/camera_2/">Camera 2</a>
+
+    <article>
+    <h2>Camera 1</h2>
+    <p>
+     <img src="{% url 'video-feed-1' %}" alt="">
+    </p>
+    </article>
+
+
+{% endblock %}

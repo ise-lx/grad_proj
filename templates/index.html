@@ -1,0 +1,17 @@
+{#login/templates/login/index.html#}
+
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+        <h3>你好，{{ request.session.user_name }},欢迎登录室内跌倒检测系统</h3>
+
+        <a href="/detect/">检测</a><br></br>
+        <a href="/camera_1/">摄像头1</a>
+
+
+    {% else %}
+    <h1>你尚未登录</h1>
+    {% endif %}
+
+{% endblock %}
